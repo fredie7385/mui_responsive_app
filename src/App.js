@@ -1,8 +1,11 @@
 import React from 'react'
-import {Drawer} from './Components/Components.jsx'
+import { MenuRoutes } from './Routes/MenuRoutes.js'
+
 
 export default function App() {
   return (
-    <><Drawer/></>
+    <>
+    <MenuRoutes/>
+    </>
   )
 }
