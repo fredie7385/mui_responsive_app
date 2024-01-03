@@ -11,7 +11,6 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import MailIcon from "@mui/icons-material/Mail";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import { Header, SideNav } from "./Components";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
@@ -49,6 +48,7 @@ function ResponsiveDrawer(props) {
             key={item.title}
             button
             selected={item.path === path}
+            onClick={handleDrawerToggle}
           >
             <ListItemButton>
               <ListItemIcon>{item.icon}</ListItemIcon>
