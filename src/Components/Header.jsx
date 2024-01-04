@@ -1,8 +1,13 @@
-import { IconButton, Toolbar, Typography } from '@mui/material'
+import { IconButton, Switch, Toolbar, Typography } from '@mui/material'
 import MenuIcon from '@mui/icons-material/Menu';
-import React from 'react'
+import React, { useContext } from 'react'
+import { Context } from '../App';
 
 export default function Header(props) {
+
+  let{toggleDarkMode} =useContext(Context);
+
+
   return (
     <Toolbar>
     <IconButton
@@ -14,9 +19,10 @@ export default function Header(props) {
     >
       <MenuIcon />
     </IconButton>
-    <Typography variant="h5" noWrap component="div">
-      Responsive drawer
+    <Typography variant="h5" sx={{flexGrow:1}} component="div">
+      My web App
     </Typography>
+    <Switch onChange={()=>toggleDarkMode()} label='dark mode'/>
   </Toolbar>
   )
 }
