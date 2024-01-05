@@ -15,15 +15,10 @@ import { Header, SideNav } from "./Components";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import { Link, Outlet, useLocation } from "react-router-dom";
-import { makeStyles } from "@mui/material";
 
 const drawerWidth = 240;
-const useStyle = makeStyles((theme) => ({
-  offset: theme.mixins.toolbar,
-}));
 
 function ResponsiveDrawer(props) {
-  const classes = useStyle;
   const location = useLocation();
   const path = location.pathname;
 
@@ -81,7 +76,6 @@ function ResponsiveDrawer(props) {
       >
         <Header handleDrawerToggle={handleDrawerToggle} />
       </AppBar>
-      <div className={classes.offset}></div>
       <Box
         component="nav"
         sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
