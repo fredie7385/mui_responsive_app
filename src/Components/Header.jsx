@@ -15,6 +15,7 @@ const useStyles = makeStyles((theme) => {
     },
     avatar: {
       marginRight: theme.spacing(2),
+      cursor: "pointer"
     },
   };
 });
@@ -28,8 +29,7 @@ export default function Header(props) {
     <Toolbar className={classes.toolbar}>
       <Avatar
         className={classes.avatar}
-        src="https://images.pexels.com/photos/5215024/pexels-photo-5215024.jpeg?auto=compress&cs=tinysrgb&w=600"
-      />
+        src="https://images.pexels.com/photos/6214730/pexels-photo-6214730.jpeg?auto=compress&cs=tinysrgb&w=600"  />
       <IconButton
         color="inherit"
         aria-label="open drawer"
