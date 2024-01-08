@@ -8,6 +8,7 @@ import {
 import Icon from "@mdi/react";
 import {
   Avatar,
+  AvatarGroup,
   Box,
   Card,
   CardContent,
@@ -16,7 +17,7 @@ import {
   IconButton,
   Typography,
 } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const icons = {
@@ -52,6 +53,43 @@ const SocialIconButtons = () => {
         </IconButton>
       ))}
     </CardContent>
+  );
+};
+
+const AvatarGroupExample = () => {
+  const [avatars, setAvatars] = useState([
+    {
+      name: "Avatar 1",
+      src: "https://images.pexels.com/photos/19702423/pexels-photo-19702423/free-photo-of-pretty-girl-using-smartphone.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "Avatar 2",
+      src: "https://images.pexels.com/photos/5623062/pexels-photo-5623062.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "Avatar 3",
+      src: "https://images.pexels.com/photos/5609026/pexels-photo-5609026.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "Avatar 4",
+      src: "https://images.pexels.com/photos/19079587/pexels-photo-19079587/free-photo-of-young-woman-wearing-an-argentinian-soccer-shirt.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "Avatar 5",
+      src: "https://images.pexels.com/photos/3697601/pexels-photo-3697601.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+    {
+      name: "Avatar 6",
+      src: "https://images.pexels.com/photos/3621121/pexels-photo-3621121.jpeg?auto=compress&cs=tinysrgb&w=600",
+    },
+  ]);
+
+  return (
+    <AvatarGroup max={5}>
+      {avatars.map((avatar, index) => (
+        <Avatar key={index} alt={avatar.name} src={avatar.src} />
+      ))}
+    </AvatarGroup>
   );
 };
 
@@ -145,7 +183,7 @@ export default function Home() {
             <CardMedia
               component={"img"}
               height={250}
-              sx={{borderRadius:3}}
+              sx={{ borderRadius: 3 }}
               image="https://images.pexels.com/photos/1525041/pexels-photo-1525041.jpeg?auto=compress&cs=tinysrgb&w=600://images.pexels.com/photos/753325/pexels-photo-753325.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load://images.pexels.com/photos/206359/pexels-photo-206359.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
             />
             <Box
@@ -171,7 +209,8 @@ export default function Home() {
               Introduction
             </Typography>
             <Typography variant="body1" color={"text.secondary"}>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis, nisi necessitatibus quia accusantium repellendus eligendi!
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis,
+              nisi necessitatibus quia accusantium repellendus eligendi!
             </Typography>
           </CardContent>
           <Box
@@ -192,6 +231,7 @@ export default function Home() {
             >
               Views
             </Link>
+            <AvatarGroupExample />
           </Box>
         </Card>
       </Grid>
