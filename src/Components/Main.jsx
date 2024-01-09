@@ -15,6 +15,7 @@ import { Header, SideNav } from "./Components";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import { Link, Outlet, useLocation } from "react-router-dom";
+import { Avatar, Typography } from "@mui/material";
 
 const drawerWidth = 240;
 
@@ -30,14 +31,41 @@ function ResponsiveDrawer(props) {
   };
 
   const navigationMenuItems = [
-    { title: "Home", path: "/", icon: <HomeIcon /> },
-    { title: "About", path: "/about", icon: <InfoIcon /> },
-    { title: "Contact", path: "/contact", icon: <MailIcon /> },
+    { title: "Home", path: "/", icon: <HomeIcon color="secondary" /> },
+    { title: "About", path: "/about", icon: <InfoIcon color="secondary" /> },
+    { title: "Contact", path: "/contact", icon: <MailIcon  color="secondary"/> },
   ];
 
   const drawer = (
     <div>
       <Toolbar />
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          p: 2,
+          alignItems: "center",
+        }}
+      >
+        <Avatar
+          component={Link}
+          src="https://images.pexels.com/photos/6214730/pexels-photo-6214730.jpeg?auto=compress&cs=tinysrgb&w=600"
+          sx={{
+            cursor: "pointer",
+            width: "79px",
+            height: "62px",
+            marginTop: "-4rem",
+            position: "relative",
+          }}
+          to={"/"}
+        />
+        <Typography color={"primary"} variant="h5">
+          Richard Rick
+        </Typography>
+        <Typography color={"secondary"} variant="body1">
+          FullStack Developer
+        </Typography>
+      </Box>
       <Divider />
       <List>
         {navigationMenuItems.map((item, index) => (
@@ -51,7 +79,7 @@ function ResponsiveDrawer(props) {
             onClick={handleDrawerToggle}
           >
             <ListItemButton>
-              <ListItemIcon>{item.icon}</ListItemIcon>
+              <ListItemIcon >{item.icon}</ListItemIcon>
               <ListItemText primary={item.title} />
             </ListItemButton>
           </ListItem>

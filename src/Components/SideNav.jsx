@@ -15,7 +15,15 @@ export default function SideNav(props) {
         }}
         sx={{
           display: { xs: "block", sm: "none" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: props.drawerWidth },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: props.drawerWidth,
+            display: 'flex',
+            justifyContent:'space-between',
+            gap: '100px',
+            background:'#333',
+            color: '#dfdfdf',
+          },
         }}
       >
         {props.drawer}
@@ -24,7 +32,15 @@ export default function SideNav(props) {
         variant="permanent"
         sx={{
           display: { xs: "none", sm: "block" },
-          "& .MuiDrawer-paper": { boxSizing: "border-box", width: props.drawerWidth },
+          "& .MuiDrawer-paper": {
+            boxSizing: "border-box",
+            width: props.drawerWidth,
+            display: 'flex',
+            justifyContent:'space-between',
+            gap: '100px',
+            background:'#333',
+            color: '#dfdfdf',
+          },
         }}
         open
       >
